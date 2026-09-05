@@ -284,61 +284,7 @@ SKOPE/
 
 SKOPE executes a controlled, deterministic pipeline designed to minimize LLM overhead while maximizing factual grounding and citation traceability:
 
-```
-                          ┌─────────────────────────────────────────────────────────┐
-                          │     Browser Client (Vanilla HTML5 / Modern CSS / JS)     │
-                          └────────────────────────────┬────────────────────────────┘
-                                                       │ HTTPS / Bearer Token
-                                                       ▼
-                          ┌─────────────────────────────────────────────────────────┐
-                          │    FastAPI Application Gateway (Auth & Role Validation)  │
-                          └────────────────────────────┬────────────────────────────┘
-                                                       │
-                                                       ▼
-  ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │                                    LANGGRAPH 3-NODE ORCHESTRATOR                                        │
-  │                                                                                                         │
-  │   [NODE 1: Intent Routing & Exact-ID Matcher]                                                          │
-  │   - Regex extraction of exact business IDs (PO, CON, INV, FCIU, PROD)                                   │
-  │   - Multi-label specialist capability assignment (Supplier, Logistics, Inventory, Analytics, Risk)    │
-  │   - Exact-ID short-circuit: if exact records satisfy request, bypass semantic vector retrieval         │
-  │                                                                                                         │
-  │                                                    │                                                    │
-  │                        ┌───────────────────────────┴───────────────────────────┐                        │
-  │                        ▼                                                       ▼                        │
-  │   [NODE 2A: Parallel Document Retrieval]                 [NODE 2B: Parallel SQL Analytics]             │
-  │   - Exact Document Short-Circuit                         - Deterministic Intent Query Plan             │
-  │   - Qdrant Hybrid Search:                                - Local Semantic Plan Compilation             │
-  │       * Dense (BGE-base-en-v1.5)                           - AST-Enforced Read-Only SQL                  │
-  │       * Sparse (Qdrant BM25)                             - 8 Curated Analytics Views                   │
-  │       * Reciprocal Rank Fusion (RRF)                     - PostgreSQL Statement Timeout (5s)           │
-  │   - Bounded BGE Cross-Encoder Reranking (top 8-12)       - Complete Paginated Rows Output              │
-  │                        │                                                       │                        │
-  │                        └───────────────────────────┬───────────────────────────┘                        │
-  │                                                    ▼                                                    │
-  │   [NODE 3: Schema-Constrained Gemini Synthesis]                                                         │
-  │   - IF structured query is fully satisfied by SQL: 0 Gemini calls (Deterministic Local Render)         │
-  │   - IF unstructured / hybrid question: EXACTLY 1 Gemini 3.5 Flash-Lite call                            │
-  │   - Strict JSON Schema: at most 6 atomic claims, bounded warnings, exact evidence IDs                   │
-  │   - 10-second end-to-end provider budget; circuit breaker against transient provider faults            │
-  └────────────────────────────────────────────────────┬────────────────────────────────────────────────────┘
-                                                       │ Structured Synthesis Result
-                                                       ▼
-                          ┌─────────────────────────────────────────────────────────┐
-                          │      Deterministic Claim Verifier & Normalization Engine │
-                          │  - Verifies exact business identifiers exist in cited ID │
-                          │  - Verifies numeric values via Python Decimal matching  │
-                          │  - Withholds ungrounded claims locally                  │
-                          │  - 4-State explicit abstention logic                    │
-                          └────────────────────────────┬────────────────────────────┘
-                                                       │
-                                                       ▼
-                          ┌─────────────────────────────────────────────────────────┐
-                          │      Server-Sent Events (SSE) Streaming Response        │
-                          │  - Stage transitions, verified claims, interactive      │
-                          │    citation links, and complete paginated data tables   │
-                          └─────────────────────────────────────────────────────────┘
-```
+![SKOPE end-to-end orchestration architecture](docs/skope-architecture.png)
 
 ### The 3-Node Pattern vs. Legacy Multi-LLM Fan-Out
 
