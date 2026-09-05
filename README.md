@@ -76,7 +76,7 @@ To prevent documentation drift and configuration ambiguity, the project maintain
 
 ### Release Assets and Dataset Placement
 
-The Git repository intentionally excludes credentials, model caches, Docker volumes, and the 16,200-document synthetic corpus. Download these files from the repository's [Releases page](https://github.com/sanmitra-b/SKOPE---Supply-Chain-Knowledge-and-Operations-AI-engine/releases):
+The Git repository intentionally excludes credentials, model caches, Docker volumes, and the 16,200-document synthetic corpus. Download these files from the repository's [Releases page](https://github.com/sanmitra-b/SKOPE/releases):
 
 - `RAG-Project-Dataset.zip` — the complete synthetic source corpus.
 - `skope-postgres.dump` — a portable PostgreSQL custom-format archive.
