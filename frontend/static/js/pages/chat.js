@@ -20,7 +20,7 @@ const AGENT_NAMES = [
 
 const SUGGESTIONS = [
   "Which suppliers have late shipments, and what penalties apply?",
-  "Show the current status of a container and its linked order.",
+  "What were net sales in the last completed quarter?",
   "Summarize open purchase orders by supplier risk tier.",
   "Which warehouse shortages need immediate action?",
 ];

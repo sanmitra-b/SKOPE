@@ -104,7 +104,7 @@ Create the local configuration file:
 Copy-Item .env.example .env
 ```
 
-Set `GEMINI_API_KEY` in `.env`. The supplied defaults use local development authentication, the Docker PostgreSQL credentials, `skope_chunks_v1`, and CPU inference. To use the verified NVIDIA path, install the optional GPU dependencies below and change `EMBEDDING_EXECUTION_PROVIDER` to `CUDAExecutionProvider`.
+Set `GEMINI_API_KEY` in `.env`. The supplied defaults use local development authentication, the Docker PostgreSQL credentials, `skope_chunks_v1`, and CPU inference. On a compatible NVIDIA Windows machine, the recommended local setup runs FastAPI in Conda and only PostgreSQL and Qdrant in Docker. Install the optional GPU dependency and set `EMBEDDING_EXECUTION_PROVIDER=CUDAExecutionProvider` to enable it.
 
 ### Dependency Installation
 
@@ -163,7 +163,23 @@ The full rebuild is substantially slower because all 16,200 documents must be ex
 
 ### Running the Application
 
-Launch the unified FastAPI server:
+#### Recommended local mode — Conda GPU API + Docker data services
+
+This keeps PostgreSQL and Qdrant reproducible while giving the local BGE embedding and reranking models direct access to the Windows NVIDIA runtime:
+
+```powershell
+docker compose up -d postgres qdrant
+conda activate SKOPE
+python scripts/run_api.py
+```
+
+Do not run the Compose `api` service at the same time: both API processes use port `5173`. Confirm the active inference provider at [`http://localhost:5173/health`](http://localhost:5173/health); both local models should list `CUDAExecutionProvider` when GPU acceleration is active.
+
+The verified GTX 1650 development run completed reranking in **0.42s**, document retrieval in **1.05s**, and the full RAG response in **4.05s**. Actual latency varies with hardware, query complexity, model warm-up, and Gemini response time.
+
+#### CPU fallback
+
+Machines without compatible NVIDIA support can keep `EMBEDDING_EXECUTION_PROVIDER=CPUExecutionProvider` and launch the same FastAPI server:
 
 ```powershell
 python scripts/run_api.py
@@ -204,12 +220,14 @@ python scripts/run_end_to_end_benchmark.py
 
 ### Docker Containerized Packaging
 
-To build and run the entire stack (PostgreSQL, Qdrant, and the CPU-mode FastAPI application serving the vanilla frontend) within Docker:
+To build and run the entire portable stack (PostgreSQL, Qdrant, and the CPU-mode FastAPI application serving the vanilla frontend) within Docker instead of using Conda:
 
 ```powershell
 docker compose up -d --build
 ```
 Access the application directly at `http://localhost:5173`.
+
+This all-Docker mode prioritizes portability. For the faster verified Windows/NVIDIA path, stop the Compose API with `docker compose stop api` and use the recommended Conda command above.
 
 ---
 

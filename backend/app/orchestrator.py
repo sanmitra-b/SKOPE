@@ -10,7 +10,6 @@ from typing import Any, Callable, TypedDict
 from langgraph.graph import END, START, StateGraph
 
 from .agent_reasoning import synthesize_answer
-from .config import get_settings
 from .models import AgentResult, Claim, Evidence, RoutingDecision
 from .query_planning import UnsupportedBusinessQuestion
 from .retrieval import retrieve
@@ -40,7 +39,6 @@ class OrchestratorState(TypedDict, total=False):
     answer: str
     timings_ms: dict[str, int]
     provider_metrics: list[dict[str, Any]]
-    provider_deadline: float
 
 
 def _emit(state: OrchestratorState, stage: str, message: str) -> None:
@@ -182,14 +180,12 @@ def run_orchestrator(
     progress: ProgressCallback | None = None,
 ) -> OrchestratorState:
     started = time.perf_counter()
-    provider_deadline = time.monotonic() + get_settings().llm_total_budget_seconds
     result = graph().invoke(
         {
             "query": query,
             "top_k": top_k,
             "collection": collection,
             "progress": progress,
-            "provider_deadline": provider_deadline,
         }
     )
     timings = dict(result.get("timings_ms", {}))

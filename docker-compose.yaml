@@ -42,10 +42,16 @@ services:
       DATABASE_URL: postgresql://skope_admin:skope_pass_secure@postgres:5432/skope_db
       QDRANT_URL: http://qdrant:6333
       EMBEDDING_EXECUTION_PROVIDER: CPUExecutionProvider
+      FIREBASE_SERVICE_ACCOUNT_JSON: /run/secrets/firebase-service-account.json
+      HOME: /app
+      XDG_CACHE_HOME: /app/.model-cache
+      HF_HOME: /app/.model-cache/huggingface
     ports:
       - "5173:5173"
     volumes:
       - "./RAG Project Dataset:/app/RAG Project Dataset:ro"
+      - "./artifacts:/app/artifacts:ro"
+      - "./firebase-service-account.json:/run/secrets/firebase-service-account.json:ro"
       - model_cache:/app/.model-cache
     depends_on:
       postgres:
