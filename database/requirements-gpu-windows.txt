@@ -1,0 +1,4 @@
+# Install after requirements-app.txt so this CUDA 12 wheel replaces FastEmbed's
+# CPU ONNX Runtime files. The PyPI extras currently pull incompatible CUDA 13 DLLs.
+--extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
+onnxruntime-gpu==1.29.0

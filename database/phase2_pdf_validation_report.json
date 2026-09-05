@@ -1,0 +1,119 @@
+{
+  "status": "PASSED",
+  "mode": "full",
+  "checks": [
+    {
+      "name": "manifest count",
+      "passed": true,
+      "actual": 13700,
+      "expected": 13700
+    },
+    {
+      "name": "unique manifest paths",
+      "passed": true,
+      "actual": 13700,
+      "expected": 13700
+    },
+    {
+      "name": "PDF integrity/content checks",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "PostgreSQL document index count",
+      "passed": true,
+      "actual": 13700,
+      "expected": 13700
+    },
+    {
+      "name": "index provenance flags",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "no generated TXT documents",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "full layout distribution",
+      "passed": true,
+      "actual": {
+        "INVOICE_QC": 4225,
+        "INVOICE_DOMESTIC": 3465,
+        "INVOICE_GLOBAL": 2310,
+        "PURCHASE_ORDER": 1600,
+        "HBL": 500,
+        "MANIFEST": 500,
+        "HAWB": 200,
+        "IMPORT_REPORT": 200,
+        "WAREHOUSE_SAFETY_AUDIT": 80,
+        "MB51_INVENTORY_REPORT": 20,
+        "WAREHOUSING_AGREEMENT": 100,
+        "VENDOR_SUPPLY_AGREEMENT": 100,
+        "CARRIER_MSA": 100,
+        "SHORTAGE_REPORT": 250,
+        "FULL_SOP": 35,
+        "QUICK_REFERENCE_SOP": 15
+      },
+      "expected": {
+        "INVOICE_QC": 4225,
+        "INVOICE_DOMESTIC": 3465,
+        "INVOICE_GLOBAL": 2310,
+        "PURCHASE_ORDER": 1600,
+        "HBL": 500,
+        "MANIFEST": 500,
+        "HAWB": 200,
+        "IMPORT_REPORT": 200,
+        "WAREHOUSE_SAFETY_AUDIT": 80,
+        "MB51_INVENTORY_REPORT": 20,
+        "WAREHOUSING_AGREEMENT": 100,
+        "VENDOR_SUPPLY_AGREEMENT": 100,
+        "CARRIER_MSA": 100,
+        "SHORTAGE_REPORT": 250,
+        "FULL_SOP": 35,
+        "QUICK_REFERENCE_SOP": 15
+      }
+    }
+  ],
+  "type_counts": {
+    "INVOICE_QC": 4225,
+    "INVOICE_DOMESTIC": 3465,
+    "INVOICE_GLOBAL": 2310,
+    "PURCHASE_ORDER": 1600,
+    "HBL": 500,
+    "MANIFEST": 500,
+    "HAWB": 200,
+    "IMPORT_REPORT": 200,
+    "WAREHOUSE_SAFETY_AUDIT": 80,
+    "MB51_INVENTORY_REPORT": 20,
+    "WAREHOUSING_AGREEMENT": 100,
+    "VENDOR_SUPPLY_AGREEMENT": 100,
+    "CARRIER_MSA": 100,
+    "SHORTAGE_REPORT": 250,
+    "FULL_SOP": 35,
+    "QUICK_REFERENCE_SOP": 15
+  },
+  "page_counts": {
+    "INVOICE_QC": 4225,
+    "INVOICE_DOMESTIC": 3465,
+    "INVOICE_GLOBAL": 2310,
+    "PURCHASE_ORDER": 1600,
+    "HBL": 500,
+    "MANIFEST": 500,
+    "HAWB": 200,
+    "IMPORT_REPORT": 200,
+    "WAREHOUSE_SAFETY_AUDIT": 240,
+    "MB51_INVENTORY_REPORT": 60,
+    "WAREHOUSING_AGREEMENT": 400,
+    "VENDOR_SUPPLY_AGREEMENT": 400,
+    "CARRIER_MSA": 400,
+    "SHORTAGE_REPORT": 250,
+    "FULL_SOP": 105,
+    "QUICK_REFERENCE_SOP": 30
+  },
+  "failures": []
+}

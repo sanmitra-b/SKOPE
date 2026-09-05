@@ -1,0 +1,33 @@
+.app-deps/
+.model-cache/
+.venv/
+.env
+.env.*
+!.env.example
+firebase-service-account*.json
+*.pem
+*.key
+*.p12
+__pycache__/
+*.py[cod]
+database/postgres_validation_report.json
+backend/.pytest_cache/
+.pytest_cache/
+tmp/
+RAG Project Dataset/
+.data-review/
+*.log
+*.dump
+*.snapshot
+*.zip
+
+# Keep only the latest representative verification artifacts in Git.
+artifacts/*
+!artifacts/evaluation/
+artifacts/evaluation/*
+!artifacts/evaluation/end_to_end_30_20260905T124525Z.csv
+!artifacts/evaluation/end_to_end_30_20260905T124525Z.json
+!artifacts/evaluation/evaluation_20260826T180204Z.json
+!artifacts/ingestion/
+artifacts/ingestion/*
+!artifacts/ingestion/latest_index_validation.json

@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-08-26T14:59:18.896063+00:00",
+  "collection": "skope_chunks_v1",
+  "expected_documents": 16200,
+  "run": {
+    "run_id": "14b0e5e3-352b-4396-9cbe-411531db4536",
+    "status": "SUCCEEDED",
+    "source_document_count": 16200,
+    "extracted_document_count": 16200,
+    "chunk_count": 17412,
+    "failed_document_count": 0,
+    "completed_at": "2026-08-23 16:22:57.044780+00:00",
+    "summary": {
+      "failures": [],
+      "collection": "skope_chunks_v1",
+      "type_counts": {
+        "HBL": 500,
+        "HAWB": 200,
+        "FULL_SOP": 132,
+        "MANIFEST": 500,
+        "INVOICE_QC": 4225,
+        "CARRIER_MSA": 400,
+        "IMPORT_REPORT": 200,
+        "INVOICE_GLOBAL": 2310,
+        "PURCHASE_ORDER": 1600,
+        "SHORTAGE_REPORT": 250,
+        "INVOICE_DOMESTIC": 3465,
+        "EMAIL_THREAD_JSON": 2500,
+        "QUICK_REFERENCE_SOP": 30,
+        "MB51_INVENTORY_REPORT": 60,
+        "WAREHOUSING_AGREEMENT": 400,
+        "WAREHOUSE_SAFETY_AUDIT": 240,
+        "VENDOR_SUPPLY_AGREEMENT": 400
+      },
+      "qdrant_points": 17412,
+      "elapsed_seconds": 3075.96
+    }
+  },
+  "documents_with_chunks": 16200,
+  "postgres_chunks": 17412,
+  "qdrant_points": 17412,
+  "postgres_unindexed_chunks": 0,
+  "valid": true
+}

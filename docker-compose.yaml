@@ -1,0 +1,59 @@
+services:
+  # 1. PostgreSQL (Conformed ERP Database)
+  postgres:
+    image: postgres:15-alpine
+    container_name: skope_postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: skope_admin
+      POSTGRES_PASSWORD: skope_pass_secure
+      POSTGRES_DB: skope_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U skope_admin -d skope_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # 2. Qdrant (Vector Database for RAG semantic search)
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: skope_qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  # 3. FastAPI, LangGraph, and the static web application.
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: skope_api
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://skope_admin:skope_pass_secure@postgres:5432/skope_db
+      QDRANT_URL: http://qdrant:6333
+      EMBEDDING_EXECUTION_PROVIDER: CPUExecutionProvider
+    ports:
+      - "5173:5173"
+    volumes:
+      - "./RAG Project Dataset:/app/RAG Project Dataset:ro"
+      - model_cache:/app/.model-cache
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+
+volumes:
+  postgres_data:
+  qdrant_data:
+  model_cache:

@@ -1,0 +1,12 @@
+.env
+firebase-service-account*.json
+.git
+.app-deps
+.model-cache
+.data-review
+RAG Project Dataset
+artifacts
+tmp
+**/__pycache__
+**/.pytest_cache
+*.pyc

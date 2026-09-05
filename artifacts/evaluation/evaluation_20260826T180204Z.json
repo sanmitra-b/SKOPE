@@ -1,0 +1,1160 @@
+{
+  "version": "skope-eval-v1",
+  "completed_at": "2026-08-26T18:02:04.528722+00:00",
+  "collection": "skope_chunks_v1",
+  "question_count": 50,
+  "top_k": 8,
+  "elapsed_seconds": 24.52,
+  "metrics": {
+    "agent_route_accuracy": 1.0,
+    "tool_route_accuracy": 1.0,
+    "retrieval_type_hit_rate_at_k": 0.7879,
+    "sql_view_accuracy": null
+  },
+  "results": [
+    {
+      "id": "Q001",
+      "question": "Which suppliers have late shipments and what contract penalties apply?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "logistics",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "VENDOR_SUPPLY_AGREEMENT"
+      ],
+      "evidence_ids": [
+        "DOC-81e29c14-8a44-5f29-9f21-96264657b547",
+        "DOC-997c8f23-97ec-5923-b4ec-b375ad7f886e",
+        "DOC-22d0f51f-e526-53ef-93d2-48f9bd46d4da",
+        "DOC-15c4168f-5eb9-5004-a024-494a2b357f8c",
+        "DOC-18f7a12a-548e-5825-a78a-7d4c7b4b82fa",
+        "DOC-0214ab9e-4c4c-5157-9546-ecbf36f77dee",
+        "DOC-047124ec-6481-59b3-8175-a280a960b0d0",
+        "DOC-0c88b28d-beb2-5ac4-ba14-8abe14a199f4"
+      ]
+    },
+    {
+      "id": "Q002",
+      "question": "Create a supplier scorecard with on-time percentage and open purchase orders.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q003",
+      "question": "What payment terms apply to open purchase orders?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": false,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "SHORTAGE_REPORT"
+      ],
+      "evidence_ids": [
+        "DOC-04a7a31d-82b6-5bef-9cdb-89f0543c356d",
+        "DOC-14f03f12-3c1e-5b71-abc2-05e3e69945f2",
+        "DOC-168be0a9-9953-55e3-a35d-a41015f5994d",
+        "DOC-0a0ce4fe-e5d0-5167-85ac-89eb92111c6e",
+        "DOC-5b2f2697-df76-5aa9-b3b9-66594e11440d",
+        "DOC-062a72fc-db67-596a-8585-4919c9e96b42",
+        "DOC-800dbf50-7a81-55e7-8927-5a248b004130",
+        "DOC-04175bed-df11-5950-aa5c-9bac4b3e83f1"
+      ]
+    },
+    {
+      "id": "Q004",
+      "question": "Summarize the warranty obligations in supplier contracts.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "VENDOR_SUPPLY_AGREEMENT",
+        "WAREHOUSING_AGREEMENT"
+      ],
+      "evidence_ids": [
+        "DOC-c62e02b0-4446-5f5e-be6e-7616f832cdbc",
+        "DOC-84e1bb6d-fc38-5ed2-81de-0133dd7b7347",
+        "DOC-ce1745d5-7845-5d36-9247-d5c990f1437b",
+        "DOC-f0400c5c-c26d-52c6-801b-945b05e84e22",
+        "DOC-e7992d3a-5fe8-5a53-8d4b-334452ac0e4f",
+        "DOC-15f4157b-d6a5-5801-8a0a-72909c4431f1",
+        "DOC-df6634ad-609d-5e1b-a73f-c3deb960d688",
+        "DOC-1cf72d37-3c48-5dee-8c31-c8322e2722b9"
+      ]
+    },
+    {
+      "id": "Q005",
+      "question": "Which suppliers are in the high risk tier?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics",
+        "risk"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q006",
+      "question": "Compare purchase order value and received quantity by supplier.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "inventory",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q007",
+      "question": "Show supplier communications about shortages.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "inventory"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "SHORTAGE_REPORT"
+      ],
+      "evidence_ids": [
+        "DOC-25bd557b-e6e0-5bba-b691-a03efd667781",
+        "DOC-f4032ee5-a898-573c-91d0-2920bf883c24",
+        "DOC-bf8835eb-0570-5f8c-9ac7-c4dc31f437f5",
+        "DOC-704a526b-0133-51fc-a3d1-970348b80312",
+        "DOC-4ccd18f7-ee97-5e0a-b9bf-61dec9fc1178",
+        "DOC-158c7454-7a3c-5646-bd0f-e078e429777f",
+        "DOC-7be68796-63bc-5081-9c73-ade67e82c5c8",
+        "DOC-c6d5f616-2b7d-5640-a282-70c6079f86c8"
+      ]
+    },
+    {
+      "id": "Q008",
+      "question": "What clauses govern late delivery credits?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "VENDOR_SUPPLY_AGREEMENT"
+      ],
+      "evidence_ids": [
+        "DOC-59c42ba7-3206-514c-b5f2-7e5518bb52cb",
+        "DOC-0214ab9e-4c4c-5157-9546-ecbf36f77dee",
+        "DOC-5bd4fd82-7014-5b1e-a2bd-6d418481a192",
+        "DOC-18f7a12a-548e-5825-a78a-7d4c7b4b82fa",
+        "DOC-82743e3d-c8b5-5f6e-ac1d-b8ac1dca24f7",
+        "DOC-3c877541-dafc-5a4c-b86b-dfb9f2427cdb",
+        "DOC-6145f878-a37e-5348-ac73-572e22ac2728",
+        "DOC-0c88b28d-beb2-5ac4-ba14-8abe14a199f4"
+      ]
+    },
+    {
+      "id": "Q009",
+      "question": "List open purchase order quantities by product.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q010",
+      "question": "Brief management on current supplier performance.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": false,
+      "returned_document_types": [
+        "FULL_SOP",
+        "SHORTAGE_REPORT"
+      ],
+      "evidence_ids": [
+        "DOC-8906d2e6-e3d6-54ca-94ae-a32c3dcc9ec9",
+        "DOC-1a029c8b-1487-507c-9d58-ea3cd93d6cc1",
+        "DOC-388be000-1818-5e46-9dba-926f5bc9ac0f",
+        "DOC-5b432341-9596-5e18-83b5-fc6b79787ccb",
+        "DOC-d7c630b7-bc69-50b4-a725-3c0bc9af5e09",
+        "DOC-2bbffb49-743b-5137-8cef-ddad9c34771c",
+        "DOC-5d5381a5-b4e8-5161-9240-32933c9f855e",
+        "DOC-c1016a3b-ddcf-59c8-a4fc-7b678728dc4e"
+      ]
+    },
+    {
+      "id": "Q011",
+      "question": "Which shipments arrived late and by how many days?",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q012",
+      "question": "Show carrier performance by number of late deliveries.",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": false,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "FULL_SOP"
+      ],
+      "evidence_ids": [
+        "DOC-81e29c14-8a44-5f29-9f21-96264657b547",
+        "DOC-d537b8ae-d71f-532e-a5e3-5a500141b1b6",
+        "DOC-5710ba90-a476-55c9-962d-e57550b04e50",
+        "DOC-ce110bdc-b84b-5817-b68d-8b18f8c0afbd",
+        "DOC-1912e1b3-190a-5600-b86b-49e2506e64dd",
+        "DOC-3058df97-afb4-5472-83d5-0e7a37c5088b",
+        "DOC-be086817-0ee5-5062-9b2f-6c9063c4a5f8",
+        "DOC-736f4db6-10f5-59dd-a21b-3de4aeb55b88"
+      ]
+    },
+    {
+      "id": "Q013",
+      "question": "What is the current status of our containers?",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q014",
+      "question": "Summarize customs clearance exceptions.",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "risk",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": false,
+      "returned_document_types": [
+        "MB51_INVENTORY_REPORT"
+      ],
+      "evidence_ids": [
+        "DOC-2bfdbe99-c535-52c5-8f82-5d52370a014d",
+        "DOC-001391a6-428c-54a5-8672-bc8083ee37b4",
+        "DOC-83e16f78-0265-57eb-a8f3-bd016f536131",
+        "DOC-3906c919-224c-5126-969c-9c1149f56450",
+        "DOC-2630155d-881a-5aa7-aea2-16a7987e4f23",
+        "DOC-2a342803-854f-5e9d-82d6-a037ed2d0032",
+        "DOC-cd408c3e-f832-5788-a3be-3021a5f8c5b9",
+        "DOC-785dab8a-66a5-5bbd-a91b-5f48bae706fc"
+      ]
+    },
+    {
+      "id": "Q015",
+      "question": "Find bills of lading for delayed ocean shipments.",
+      "errors": [],
+      "actual_agents": [
+        "logistics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "CARRIER_MSA",
+        "HBL"
+      ],
+      "evidence_ids": [
+        "DOC-deee443b-1cb7-5754-adea-2f5709f5da06",
+        "DOC-a167c999-8959-5f4e-a20a-e85e6ee07353",
+        "DOC-f3b9be5d-79f5-59c6-97ac-1a071c75df74",
+        "DOC-d4933705-b8ea-5f2c-b2aa-0b8658b57c44",
+        "DOC-46d10ee4-049a-5de3-9087-8029208fe3ef",
+        "DOC-969b7aad-3ece-5e81-9d45-ab5a8f2d22da",
+        "DOC-0d4c8fc8-dccf-529b-a8b3-1f9e16b60075",
+        "DOC-00fb3645-18fb-5747-848e-e1f0a065a2c2"
+      ]
+    },
+    {
+      "id": "Q016",
+      "question": "Find air waybills and their linked purchase orders.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "logistics",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "HAWB"
+      ],
+      "evidence_ids": [
+        "DOC-512b195d-93ab-5468-8dd8-8191605bb835",
+        "DOC-1627a6fc-dc65-5d53-84fc-c18f2396fb88",
+        "DOC-cb0a29ac-d85a-5519-bdeb-085221419c67",
+        "DOC-06fa6162-b449-5202-a2af-aa6092f0b3b6",
+        "DOC-3ef32cfb-498e-5d7f-8018-f592b5a876d9",
+        "DOC-4334c307-7b46-5e99-afb0-9745a0c5661c",
+        "DOC-c63e0e47-f087-59ee-92bc-02bba578ae60",
+        "DOC-c82aee0f-d278-5a9c-b6c3-fce31fa8bfa7"
+      ]
+    },
+    {
+      "id": "Q017",
+      "question": "Which routes have the greatest arrival variance?",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q018",
+      "question": "Summarize carrier service-level obligations.",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "CARRIER_MSA"
+      ],
+      "evidence_ids": [
+        "DOC-32559348-03c6-51fc-83c6-14255419e43f",
+        "DOC-1d23828a-d2fa-58cf-97f5-11ef0735dfcd",
+        "DOC-29399e3c-8852-563b-b857-28afe422531e",
+        "DOC-2268c15c-d37a-5f86-abe6-c9627517a8f2",
+        "DOC-0c3aa432-6778-5e4d-91c1-19fb7c69bfe1",
+        "DOC-1ba89e5f-afb3-57b4-b645-a9c7b476300b",
+        "DOC-92bad40b-eae2-58bb-bf0a-c72c94d50a83",
+        "DOC-60fa68e5-f7dc-58d1-a303-343aab0cf8ea"
+      ]
+    },
+    {
+      "id": "Q019",
+      "question": "Which manifests mention damaged cargo?",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "inventory"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "MANIFEST"
+      ],
+      "evidence_ids": [
+        "DOC-79183fe7-796b-519b-9ba5-f26d3973c81e",
+        "DOC-8f83177d-ec5c-5230-8912-2c0ca1a714c9",
+        "DOC-69a886b7-46f0-5a9b-9e21-2debbac84896",
+        "DOC-17dd913d-197a-58b4-bf3a-a7c7431c5266",
+        "DOC-5a51d08d-492e-5e8e-9506-c6e93462be67",
+        "DOC-cf1a3d64-c7e0-5fae-a28e-6ba0c44d583b",
+        "DOC-e832ee8a-fbea-5add-9b53-b62ec65c7044",
+        "DOC-f744585c-fdfd-5da7-92f1-a1252279d086"
+      ]
+    },
+    {
+      "id": "Q020",
+      "question": "Give an executive brief on late shipments and carrier exceptions.",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "analytics",
+        "risk",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "FULL_SOP"
+      ],
+      "evidence_ids": [
+        "DOC-3bffd32b-4dc2-55f5-8968-3be3204fe9bd",
+        "DOC-83fcb5c2-8881-5af2-8a17-e68b6d1c44de",
+        "DOC-8bb1db40-dee9-50e3-8024-d78c1ceb93a0",
+        "DOC-ee1a5c62-9a0f-5e48-8e4f-0cb8004fc06a",
+        "DOC-afc1e8ef-d3d3-5ad4-9eb8-8d56f5052465",
+        "DOC-e7210de5-44db-5f22-af60-0b6f75bde9df",
+        "DOC-997c8f23-97ec-5923-b4ec-b375ad7f886e",
+        "DOC-d537b8ae-d71f-532e-a5e3-5a500141b1b6"
+      ]
+    },
+    {
+      "id": "Q021",
+      "question": "What is the current inventory by product and warehouse?",
+      "errors": [],
+      "actual_agents": [
+        "inventory",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q022",
+      "question": "Which warehouse shortages require immediate action?",
+      "errors": [],
+      "actual_agents": [
+        "inventory",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "SHORTAGE_REPORT"
+      ],
+      "evidence_ids": [
+        "DOC-25bd557b-e6e0-5bba-b691-a03efd667781",
+        "DOC-04a7a31d-82b6-5bef-9cdb-89f0543c356d",
+        "DOC-14f03f12-3c1e-5b71-abc2-05e3e69945f2",
+        "DOC-af5d6282-9a0b-50ba-8ad8-d0723dc7afd1",
+        "DOC-30280268-41fc-5518-8514-979f33dd2709",
+        "DOC-168be0a9-9953-55e3-a35d-a41015f5994d",
+        "DOC-173e70c3-46cf-5756-b479-a0efe38db421",
+        "DOC-1d2260dc-52f6-560c-9d7f-8afe46e9e008"
+      ]
+    },
+    {
+      "id": "Q023",
+      "question": "Summarize goods received versus ordered quantities.",
+      "errors": [],
+      "actual_agents": [
+        "inventory",
+        "analytics",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q024",
+      "question": "What does the SOP require when damaged stock is found?",
+      "errors": [],
+      "actual_agents": [
+        "inventory"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "FULL_SOP"
+      ],
+      "evidence_ids": [
+        "DOC-2bbffb49-743b-5137-8cef-ddad9c34771c",
+        "DOC-1a029c8b-1487-507c-9d58-ea3cd93d6cc1",
+        "DOC-5b432341-9596-5e18-83b5-fc6b79787ccb",
+        "DOC-8906d2e6-e3d6-54ca-94ae-a32c3dcc9ec9",
+        "DOC-388be000-1818-5e46-9dba-926f5bc9ac0f",
+        "DOC-d7c630b7-bc69-50b4-a725-3c0bc9af5e09",
+        "DOC-0dac208e-3cda-5af5-82d2-59803384fa48",
+        "DOC-dea8c264-d631-55b7-8b3e-53a184eb3e03"
+      ]
+    },
+    {
+      "id": "Q025",
+      "question": "Find warehouse audit findings marked high priority.",
+      "errors": [],
+      "actual_agents": [
+        "inventory"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "WAREHOUSE_SAFETY_AUDIT"
+      ],
+      "evidence_ids": [
+        "DOC-328dab27-56de-59a7-99da-82f080ce8fe6",
+        "DOC-92853485-c91d-59b9-926e-5330e07db458",
+        "DOC-7b90bfa0-8c27-51e3-8020-d6c2d358cf5b",
+        "DOC-770a9248-21e5-53c8-bcfc-f144fa0eac4e",
+        "DOC-848cf0af-7375-55d6-8923-e6beb1449152",
+        "DOC-df3af2b3-b78b-53bc-9f21-243ac269dd3a",
+        "DOC-b2accf6b-e7ab-51d9-96fa-672eddef994d",
+        "DOC-583737fc-f0c3-5f26-8a13-2bea9bea2d6f"
+      ]
+    },
+    {
+      "id": "Q026",
+      "question": "Which products have the lowest on-hand quantity?",
+      "errors": [],
+      "actual_agents": [
+        "inventory",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q027",
+      "question": "Show inventory communications about receipt discrepancies.",
+      "errors": [],
+      "actual_agents": [
+        "inventory"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "MB51_INVENTORY_REPORT"
+      ],
+      "evidence_ids": [
+        "DOC-1aa2a4d9-c49f-559f-92e3-6daa263c1213",
+        "DOC-225217ac-533a-5102-b12a-94e869613a78",
+        "DOC-143893ec-9dc0-51b8-bf4f-7ae6d2467224",
+        "DOC-61912ded-3099-5923-86d2-0301537b2e90",
+        "DOC-2f70c76d-3bec-50fe-8a3c-4eedd4189118",
+        "DOC-435ed69c-7c63-560f-bebd-44e9727000be",
+        "DOC-d95fd5f3-cdda-5951-9797-6c6dbc794713",
+        "DOC-e832ee8a-fbea-5add-9b53-b62ec65c7044"
+      ]
+    },
+    {
+      "id": "Q028",
+      "question": "Summarize warehouse safety controls and open findings.",
+      "errors": [],
+      "actual_agents": [
+        "inventory",
+        "analytics",
+        "risk",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "WAREHOUSE_SAFETY_AUDIT"
+      ],
+      "evidence_ids": [
+        "DOC-818bb95a-d93d-5555-af2a-0e9c1da3f97e",
+        "DOC-b26fb2d9-0b78-575b-9d1f-02be6fa279b6",
+        "DOC-7c1e947c-7923-5c96-8915-72020cc2dd05",
+        "DOC-dbdfd5ba-2511-50e8-b1f0-1187fa8e2f4b",
+        "DOC-9fd38be5-45c7-5ca9-b54c-f9753aa9aeb9",
+        "DOC-9cdbeb05-8112-50be-b09a-60d2a6675c5d",
+        "DOC-2ce77ab3-e54a-51ee-9e5a-a654a577023f",
+        "DOC-1f2d473b-415b-55d4-b243-d98ada42784d"
+      ]
+    },
+    {
+      "id": "Q029",
+      "question": "Which purchase order lines remain partially received?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "inventory",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q030",
+      "question": "Give the warehouse team a quick reference for shortage handling.",
+      "errors": [],
+      "actual_agents": [
+        "inventory"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "FULL_SOP",
+        "QUICK_REFERENCE_SOP",
+        "SHORTAGE_REPORT"
+      ],
+      "evidence_ids": [
+        "DOC-fbd83597-ca59-5003-a66a-0d7d7639ec40",
+        "DOC-5601f026-a593-512c-b97e-799588670f61",
+        "DOC-3bffd32b-4dc2-55f5-8968-3be3204fe9bd",
+        "DOC-cadb7a6b-f0d1-57ae-9165-3c16e140f3d7",
+        "DOC-af5d6282-9a0b-50ba-8ad8-d0723dc7afd1",
+        "DOC-3fb13553-2319-5775-b11d-c97dfc8959ac",
+        "DOC-1d2260dc-52f6-560c-9d7f-8afe46e9e008",
+        "DOC-1c8e3ecd-e859-57a3-b693-0d2e051865b8"
+      ]
+    },
+    {
+      "id": "Q031",
+      "question": "Summarize current supply chain risks and evidence-based mitigations.",
+      "errors": [],
+      "actual_agents": [
+        "analytics",
+        "risk",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "FULL_SOP",
+        "WAREHOUSE_SAFETY_AUDIT"
+      ],
+      "evidence_ids": [
+        "DOC-9fd38be5-45c7-5ca9-b54c-f9753aa9aeb9",
+        "DOC-8053ba41-389f-5d0b-9555-f993018ed438",
+        "DOC-1061d651-f926-5017-950a-1618b65317e4",
+        "DOC-3abc6726-3e63-53ce-8d84-ccf504fd0678",
+        "DOC-5aaf122c-e107-550c-ba35-707a143e5bf4",
+        "DOC-02dc3127-4b0f-527a-a4e9-70d4b997fd98",
+        "DOC-9cdbeb05-8112-50be-b09a-60d2a6675c5d",
+        "DOC-536ad20a-f953-5c9e-89c5-b867a3a341b6"
+      ]
+    },
+    {
+      "id": "Q032",
+      "question": "Which contract breaches are documented in vendor emails?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics",
+        "risk"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "FULL_SOP",
+        "QUICK_REFERENCE_SOP"
+      ],
+      "evidence_ids": [
+        "DOC-8eb8ffa3-c9cb-5aaa-9d77-e8c8d3c6f68b",
+        "DOC-ff6b6ec8-e1bc-5c86-a961-a46ebca51f4d",
+        "DOC-a60c1ca3-e5b5-5273-adae-ddf863c07e0c",
+        "DOC-b81db382-3edd-57f8-8484-af3349d967bf",
+        "DOC-1eaac42e-7352-5a5d-95d3-9696f07c7c20",
+        "DOC-7673a4a5-79e9-5e8a-bc38-006795f951e0",
+        "DOC-1912e1b3-190a-5600-b86b-49e2506e64dd",
+        "DOC-80955a22-5391-5233-9645-ca3f63b64ca4"
+      ]
+    },
+    {
+      "id": "Q033",
+      "question": "Identify customs and logistics compliance exceptions.",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "risk"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": false,
+      "returned_document_types": [
+        "FULL_SOP",
+        "WAREHOUSING_AGREEMENT"
+      ],
+      "evidence_ids": [
+        "DOC-3bffd32b-4dc2-55f5-8968-3be3204fe9bd",
+        "DOC-44ba15c2-7adf-5be0-b5e1-08018f1321e7",
+        "DOC-3851caa1-24ef-554a-8b3b-5f3954277505",
+        "DOC-bde1945a-d107-5b93-b324-9e8e6f112477",
+        "DOC-98166acc-52dd-55c1-89a7-d3d46e4c0a98",
+        "DOC-bfd4b060-9d9d-530d-a77c-937794d414b3",
+        "DOC-de951e90-8d50-5db3-acf1-77b4e21e2930",
+        "DOC-f459232e-d994-58d4-bce4-936330b6e1c7"
+      ]
+    },
+    {
+      "id": "Q034",
+      "question": "Which high-risk suppliers also have open purchase orders?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics",
+        "risk"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q035",
+      "question": "List current red flags without predicting future events.",
+      "errors": [],
+      "actual_agents": [
+        "analytics",
+        "risk"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "FULL_SOP",
+        "WAREHOUSE_SAFETY_AUDIT"
+      ],
+      "evidence_ids": [
+        "DOC-992851e4-b9fa-5f5a-8ec5-435c56a184e2",
+        "DOC-b913d40a-7cb3-5118-8730-de35da8fed61",
+        "DOC-ab465146-a805-52ca-83a3-9bad78c7fdc4",
+        "DOC-5da94585-c7d4-5abb-bfff-c060cffd06f7",
+        "DOC-3f12a08a-d5ee-5344-9e9e-066f7555abd5",
+        "DOC-4a52bb3a-a90f-568d-9e93-0309a37a8058",
+        "DOC-92853485-c91d-59b9-926e-5330e07db458",
+        "DOC-457ce5ec-4878-542a-abea-ac0cc8a80edf"
+      ]
+    },
+    {
+      "id": "Q036",
+      "question": "What mitigations are required by warehouse procedures?",
+      "errors": [],
+      "actual_agents": [
+        "inventory",
+        "risk"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "FULL_SOP"
+      ],
+      "evidence_ids": [
+        "DOC-f78d5fce-ec41-5ba7-b25f-0df9fae7c594",
+        "DOC-c9876dde-7df8-534c-8cec-774d575c4203",
+        "DOC-d02f92cb-8ab4-5bd9-84cc-2781d59cad6c",
+        "DOC-943f36a7-65e9-5d05-b72f-dbff07680d15",
+        "DOC-bcba1c84-b42b-5b74-8edd-644b254d3170",
+        "DOC-f2f52f7f-87a7-53d8-9492-ca16b2ff7d88",
+        "DOC-1e9db49f-df00-59ca-9c0d-652f82771bb7",
+        "DOC-83fcb5c2-8881-5af2-8a17-e68b6d1c44de"
+      ]
+    },
+    {
+      "id": "Q037",
+      "question": "Which delayed shipments create contractual exposure?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "logistics",
+        "analytics",
+        "risk"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "CARRIER_MSA",
+        "VENDOR_SUPPLY_AGREEMENT"
+      ],
+      "evidence_ids": [
+        "DOC-01165974-9850-5e20-aada-e1d69016a81b",
+        "DOC-0ed65134-b3f0-58fe-9313-237fbe5e2a2d",
+        "DOC-0e0da67f-ac09-5b35-813c-4c54365b4c13",
+        "DOC-0706f901-2a16-5fe7-9b59-0e3b364f4696",
+        "DOC-124fbba2-1ba8-5248-b19a-6aedcb0ea887",
+        "DOC-070427c2-43de-5f05-a743-ac2b2566edeb",
+        "DOC-85d1e827-2410-5b97-916d-28fecff0fb3a",
+        "DOC-24760f80-4b4a-5c8d-912c-6b47c266d97c"
+      ]
+    },
+    {
+      "id": "Q038",
+      "question": "Summarize audit exceptions and required corrective actions.",
+      "errors": [],
+      "actual_agents": [
+        "risk",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "MB51_INVENTORY_REPORT",
+        "WAREHOUSE_SAFETY_AUDIT"
+      ],
+      "evidence_ids": [
+        "DOC-001391a6-428c-54a5-8672-bc8083ee37b4",
+        "DOC-2bfdbe99-c535-52c5-8f82-5d52370a014d",
+        "DOC-5fedbbf7-2a72-5ef0-96e5-b2866c44efed",
+        "DOC-2630155d-881a-5aa7-aea2-16a7987e4f23",
+        "DOC-2a342803-854f-5e9d-82d6-a037ed2d0032",
+        "DOC-2106f282-62e5-517d-8671-46d18106f3c0",
+        "DOC-23ba9adf-27c5-5e19-9c15-b40adc1848c3",
+        "DOC-d8473a89-760a-5250-bc85-54ca6804e5f4"
+      ]
+    },
+    {
+      "id": "Q039",
+      "question": "Show documented service-level breaches by carrier.",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "analytics",
+        "risk"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON",
+        "FULL_SOP",
+        "QUICK_REFERENCE_SOP"
+      ],
+      "evidence_ids": [
+        "DOC-8eb8ffa3-c9cb-5aaa-9d77-e8c8d3c6f68b",
+        "DOC-a60c1ca3-e5b5-5273-adae-ddf863c07e0c",
+        "DOC-ff6b6ec8-e1bc-5c86-a961-a46ebca51f4d",
+        "DOC-1eaac42e-7352-5a5d-95d3-9696f07c7c20",
+        "DOC-7673a4a5-79e9-5e8a-bc38-006795f951e0",
+        "DOC-b81db382-3edd-57f8-8484-af3349d967bf",
+        "DOC-dafb770a-0eb6-5a07-8887-7aa88e4bf731",
+        "DOC-f6b0717e-dcb3-56c9-a843-a1b2b5125e7b"
+      ]
+    },
+    {
+      "id": "Q040",
+      "question": "Prepare a board-ready risk summary with citations.",
+      "errors": [],
+      "actual_agents": [
+        "analytics",
+        "risk",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "FULL_SOP",
+        "WAREHOUSE_SAFETY_AUDIT"
+      ],
+      "evidence_ids": [
+        "DOC-b81db382-3edd-57f8-8484-af3349d967bf",
+        "DOC-f024d740-b908-51c3-b157-e08c63e88aa7",
+        "DOC-5281a03d-fbf1-5b00-a0ad-db68013b9f3b",
+        "DOC-5ba74334-2f92-5fe2-bc19-1da773af8a25",
+        "DOC-1061d651-f926-5017-950a-1618b65317e4",
+        "DOC-392441aa-31c4-5ac2-804f-b74774eb9ad7",
+        "DOC-22cae271-7bef-53b7-b462-23ea4c80ec85",
+        "DOC-172c3a48-9215-55b9-a0fb-827df432a73e"
+      ]
+    },
+    {
+      "id": "Q041",
+      "question": "What is the average on-time percentage across suppliers with recorded performance?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q042",
+      "question": "How many open purchase orders are there by supplier?",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q043",
+      "question": "Compare ordered value by product category.",
+      "errors": [],
+      "actual_agents": [
+        "analytics"
+      ],
+      "actual_requires_documents": false,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q044",
+      "question": "Show delivered and undelivered container counts.",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q045",
+      "question": "What are the most common delayed delivery reasons?",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true
+    },
+    {
+      "id": "Q046",
+      "question": "Create an executive summary of open operational commitments.",
+      "errors": [],
+      "actual_agents": [
+        "analytics",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": false,
+      "returned_document_types": [
+        "FULL_SOP"
+      ],
+      "evidence_ids": [
+        "DOC-a49c1130-7f9e-5cd3-b463-059787f6e642",
+        "DOC-4650a12d-ee74-5b6e-ac2d-6a48da988003",
+        "DOC-a3b8cbf0-92f9-5b0f-b2ba-db8a5541d1ff",
+        "DOC-5463d77d-de4a-565b-85d8-734a86e78b96",
+        "DOC-7d2aa015-7816-516c-90dd-ef96b507578d",
+        "DOC-41d72068-314a-5691-8089-97b7d5ded8c8",
+        "DOC-bb5515f6-c6bf-5dc8-9bf3-2edcae6c5937",
+        "DOC-c5c26b99-ed76-539a-84d7-2c493569c353"
+      ]
+    },
+    {
+      "id": "Q047",
+      "question": "Find invoices with quality-control context.",
+      "errors": [],
+      "actual_agents": [
+        "inventory"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": false,
+      "returned_document_types": [
+        "INVOICE_GLOBAL",
+        "WAREHOUSE_SAFETY_AUDIT"
+      ],
+      "evidence_ids": [
+        "DOC-d118d839-3b31-537b-b9ee-44bcdb20dd75",
+        "DOC-80ed174e-b9fe-5486-b236-af8506600f96",
+        "DOC-129ac2cd-95ee-5e3e-8d72-c508c95423d0",
+        "DOC-bb639695-a47a-507d-bb4b-c617608cbfd0",
+        "DOC-83ed30b9-b686-539e-af90-49a435909235",
+        "DOC-a2ea641b-16ca-58ff-a1f1-e1e6824ef164",
+        "DOC-1f2d473b-415b-55d4-b243-d98ada42784d",
+        "DOC-2ce77ab3-e54a-51ee-9e5a-a654a577023f"
+      ]
+    },
+    {
+      "id": "Q048",
+      "question": "Show the late delivery clause in contract CON-P2-0101.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "VENDOR_SUPPLY_AGREEMENT"
+      ],
+      "evidence_ids": [
+        "DOC-3832a423-10c5-58f6-8d83-c72312bbda5b",
+        "DOC-d2a0e982-a3f0-59dd-90d0-f21e2adf860f",
+        "DOC-68f5aa1e-8902-50b2-9a0d-45204969a49e",
+        "DOC-7a3b4493-2889-598b-ac08-8cac2cd9c7a4"
+      ]
+    },
+    {
+      "id": "Q049",
+      "question": "Show all evidence linked to purchase order PO-P2-00006.",
+      "errors": [],
+      "actual_agents": [
+        "supplier",
+        "analytics"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": true,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "HAWB",
+        "IMPORT_REPORT",
+        "PURCHASE_ORDER",
+        "SHORTAGE_REPORT"
+      ],
+      "evidence_ids": [
+        "DOC-d3fe03fe-4f3b-5393-bbfd-9a2582dfb2eb",
+        "DOC-981cf0a2-7be2-5528-a36f-ffa0814ada68",
+        "DOC-e773e49f-dc43-52f5-9702-db47506668bf",
+        "DOC-f9dfcebf-b379-5ad8-ad19-0c19b2fc497d"
+      ]
+    },
+    {
+      "id": "Q050",
+      "question": "Summarize emails about customer delivery exceptions.",
+      "errors": [],
+      "actual_agents": [
+        "logistics",
+        "risk",
+        "executive_reporting"
+      ],
+      "actual_requires_documents": true,
+      "actual_requires_sql": false,
+      "route_pass": true,
+      "tool_route_pass": true,
+      "retrieval_pass": true,
+      "returned_document_types": [
+        "EMAIL_THREAD_JSON"
+      ],
+      "evidence_ids": [
+        "DOC-00d941b5-e595-5625-9316-602b5701cd30",
+        "DOC-06d33943-2e09-502e-9cc3-d617adcb405b",
+        "DOC-53d9d3fa-9f41-5cfd-a2c5-757e80246760",
+        "DOC-bcfe42ab-09e8-59ef-9a01-79a59496d998",
+        "DOC-6bc71ea9-85d4-5cbb-bcbf-69aa2c657d78",
+        "DOC-6d73c6c6-d815-5371-8a02-28e8e512933a",
+        "DOC-05e6da24-cb38-51e1-a909-db7846fc7c3c",
+        "DOC-0639e48a-5852-5cb9-bf46-457ae4c604df"
+      ]
+    }
+  ]
+}

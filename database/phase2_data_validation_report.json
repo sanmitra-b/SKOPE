@@ -1,0 +1,137 @@
+{
+  "status": "PASSED",
+  "checks": [
+    {
+      "name": "row count skope.dim_supplier",
+      "passed": true,
+      "actual": 30,
+      "expected": 30
+    },
+    {
+      "name": "row count skope.supplier_product",
+      "passed": true,
+      "actual": 600,
+      "expected": 600
+    },
+    {
+      "name": "row count skope.purchase_order",
+      "passed": true,
+      "actual": 1600,
+      "expected": 1600
+    },
+    {
+      "name": "row count skope.purchase_order_line",
+      "passed": true,
+      "actual": 4800,
+      "expected": 4800
+    },
+    {
+      "name": "row count skope.shipment",
+      "passed": true,
+      "actual": 1200,
+      "expected": 1200
+    },
+    {
+      "name": "row count skope.shipment_container",
+      "passed": true,
+      "actual": 1200,
+      "expected": 1200
+    },
+    {
+      "name": "row count skope.goods_receipt",
+      "passed": true,
+      "actual": 4800,
+      "expected": 4800
+    },
+    {
+      "name": "row count skope.contract",
+      "passed": true,
+      "actual": 300,
+      "expected": 300
+    },
+    {
+      "name": "row count skope.contract_clause",
+      "passed": true,
+      "actual": 1500,
+      "expected": 1500
+    },
+    {
+      "name": "row count skope.warehouse_audit",
+      "passed": true,
+      "actual": 100,
+      "expected": 100
+    },
+    {
+      "name": "row count skope.audit_finding",
+      "passed": true,
+      "actual": 300,
+      "expected": 300
+    },
+    {
+      "name": "row count skope.customs_entry",
+      "passed": true,
+      "actual": 200,
+      "expected": 200
+    },
+    {
+      "name": "row count skope.enterprise_policy",
+      "passed": true,
+      "actual": 50,
+      "expected": 50
+    },
+    {
+      "name": "all Phase 2 business entities are disclosed as synthetic",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "unsupported GLO crosswalk is absent",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "shipment -> PO -> container source chain resolves",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "PO -> supplier/product -> receipt chain resolves",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "customs entries resolve to valued shipments",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "every contract has five stored clauses",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "enough recorded shortage lines for 250 reports",
+      "passed": true,
+      "actual": 683,
+      "expected": ">=250"
+    },
+    {
+      "name": "authorized Maersk/DHL demo carrier mappings resolve",
+      "passed": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "Phase 2 ETL recorded a successful run",
+      "passed": true,
+      "actual": 1,
+      "expected": ">=1"
+    }
+  ]
+}
