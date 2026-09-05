@@ -16,6 +16,7 @@ backend/.pytest_cache/
 tmp/
 RAG Project Dataset/
 .data-review/
+release-assets/
 *.log
 *.dump
 *.snapshot
